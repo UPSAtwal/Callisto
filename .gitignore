@@ -1,0 +1,45 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+callisto-app/*.iml
+callisto-app/*.ipr
+callisto-app/*.iws
+callisto-app/.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+callisto-app/**/doc/api/
+callisto-app/**/ios/Flutter/.last_build_id
+callisto-app/.dart_tool/
+callisto-app/.flutter-plugins
+callisto-app/.flutter-plugins-dependencies
+callisto-app/.packages
+callisto-app/.pub-cache/
+callisto-app/.pub/
+callisto-app/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+callisto-app/android/app/debug
+callisto-app/android/app/profile
+callisto-app/android/app/release
+
