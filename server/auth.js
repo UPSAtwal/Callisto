@@ -6,8 +6,6 @@ function authenticate(pass) {
     if (pass.trim() === password) {
         return true;
     } else {
-        console.log(pass);
-        console.log(password)
         return false;
     }
 }
