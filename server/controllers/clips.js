@@ -20,7 +20,11 @@ async function push(req, res) {
             const addr = await redis.sMembers('clients');
             //todo make request to clients
             for (const ip of addr) {
-                await needle.post(addr + '/', { text: text }, { json: true});
+                try {
+                    await needle.post(addr + '/', { text: text }, { json: true });
+                } catch {
+                    console.log(`Unreachable at ${ip}`);
+                }
             }
             res.sendStatus(200);
         } catch (err) {
