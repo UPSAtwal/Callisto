@@ -1,8 +1,7 @@
-// clipboard_page.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../auth/login_page/login_page.dart';
 import 'clipboard.dart';
 
 class ClipboardHistoryPage extends StatelessWidget {
@@ -47,13 +46,7 @@ class ClipboardHistoryPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          final authBloc = context.read<AuthBloc>();
-          if (authBloc.state == AuthStatus.authenticated) {
-            final token = authBloc.getToken(); // Replace with your token retrieval logic
-            context.read<ClipboardBloc>().add(
-                  FetchClipboardHistoryEvent(token: token),
-                );
-          }
+          // context.read<ClipboardBloc>().add(FetchClipboardHistoryEvent());
         },
         child: Icon(Icons.refresh),
       ),
