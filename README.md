@@ -23,3 +23,4 @@ Which means:
 - [ ] Automate building packages and deployment using Github Actions
 - [ ] Improve API security
 - [ ] Add clipboard encryption
+- [ ] Add device discoverability on LAN using mDNS (akin to avahi)
