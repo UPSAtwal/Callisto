@@ -2,7 +2,7 @@
 
 ---
 
-## A self-hosted cross-platform app to share you clipboard across all devices ✍🏽
+## A self-hosted cross-platform app to share your clipboard across all devices ✍🏽
 
 ![Callisto Logo](./callisto-gh.png "Callisto Logo")
 
