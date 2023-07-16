@@ -4,9 +4,14 @@
 
 ## A self-hosted cross-platform app to share your clipboard across all devices ✍🏽
 
-![Callisto Logo](./callisto-gh.png "Callisto Logo")
+![Callisto Logo](./images/callisto-gh.png "Callisto Logo")
 
 ---
+
+## Screenshots
+
+![Login Page](./images/login_page.png)
+![Clipboard History](./images/clipboard.png)
 
 ## 🤓 This project follows the Monorepo approach
 
@@ -24,3 +29,4 @@ Which means:
 - [ ] Improve API security
 - [ ] Add clipboard encryption
 - [ ] Add device discoverability on LAN using mDNS (akin to avahi)
+- [ ] Improve UI :)
