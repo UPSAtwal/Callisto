@@ -1,5 +1,6 @@
 const redis = require('../db');
 const authenticate = require('../auth');
+const needle = require('needle');
 
 async function all(req, res) {
     const { pass } = req.body;
@@ -18,7 +19,9 @@ async function push(req, res) {
             await redis.rPush('clips', text);
             const addr = await redis.sMembers('clients');
             //todo make request to clients
-
+            for (const ip of addr) {
+                await needle.post(addr + '/', { text: text }, { json: true});
+            }
             res.sendStatus(200);
         } catch (err) {
             console.log(err);
