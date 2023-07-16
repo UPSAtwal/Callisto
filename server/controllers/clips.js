@@ -16,6 +16,9 @@ async function push(req, res) {
     if (authenticate(pass)) {
         try {
             await redis.rPush('clips', text);
+            const addr = await redis.sMembers('clients');
+            //todo make request to clients
+
             res.sendStatus(200);
         } catch (err) {
             console.log(err);
