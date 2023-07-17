@@ -2,11 +2,12 @@ name: Deploy Callisto (Flutter) to Web
 
 on:
   push:
-    branches: [ deploy ]
+    branches: [deploy]
 
 permissions:
   contents: read
   pages: write
+  id-token: write
 
 jobs:
   build:
@@ -15,10 +16,20 @@ jobs:
         working-directory: callisto-app/callisto
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v3
-        - uses: subosito/flutter-action@v2
-          with:
-            channel: 'stable'
-        # - run: flutter pub get
-        - run: flutter test
-        - run: flutter build web
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+      # - run: flutter pub get
+      - run: flutter test
+      - run: flutter build web
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
