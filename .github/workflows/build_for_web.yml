@@ -1,13 +1,21 @@
-# name: Deploy Callisto (Flutter) to Web
+name: Deploy Callisto (Flutter) to Web
 
-# on:
-#   push:
-#     branches: [ main ]
+on:
+  push:
+    branches: [ deploy ]
 
-# permissions:
-#   contents: read
-#   pages: write
+permissions:
+  contents: read
+  pages: write
 
-# jobs:
-#   build:
-#     runs-on
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: subosito/flutter-action@v2
+          with:
+            channel: 'stable'
+        - run: flutter pub get
+        - run: flutter test
+        - run: flutter build web
