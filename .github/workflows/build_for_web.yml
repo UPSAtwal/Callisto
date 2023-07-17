@@ -10,6 +10,9 @@ permissions:
 
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: callisto-app/callisto
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
